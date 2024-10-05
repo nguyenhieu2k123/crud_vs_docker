@@ -1,0 +1,16 @@
+/client/node_modules/
+/client/package-lock.json
+/client/.next/
+/client/build
+
+
+
+
+/server/node_modules
+/server/package-lock.json
+
+
+
+
+.DS_Store
+

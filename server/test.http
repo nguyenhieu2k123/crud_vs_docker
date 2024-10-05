@@ -1,0 +1,43 @@
+###
+GET http://localhost:4000/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJBZG1pbiBuZSIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlhdCI6MTcyNjQ5OTEwNywiZXhwIjoxNzI2NDk5MTM3fQ.rqGUWKQofbXW8jL80gbyI6RAB9wszPZ9yT0FwVZG8lc
+User-Id: 10
+
+###
+GET http://localhost:4000/api/orders?page=4&per_page=3
+# customer_name=john&status=3
+# ?status=1,4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJBZG1pbiBuZSIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJyb2xlIjoiU1VQRVJBRE1JTiIsImlhdCI6MTcyNjQ5OTEwNywiZXhwIjoxNzI2NDk5MTM3fQ.rqGUWKQofbXW8jL80gbyI6RAB9wszPZ9yT0FwVZG8lc"
+User-Id: 10
+
+###
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+	"email": "admin@example.com",
+	"password": "test"
+}
+
+###
+POST http://localhost:4000/api/register
+Content-Type: application/json
+
+{
+	"name": "Test ne",
+	"email": "Test@example.com",
+	"password": "test"
+}
+
+###
+POST http://localhost:4000/api/register
+Content-Type: application/json
+
+{
+	"name": "Admin ne",
+	"email": "admin@example.com",
+	"password": "test",
+	"role": "SUPERADMIN"
+}

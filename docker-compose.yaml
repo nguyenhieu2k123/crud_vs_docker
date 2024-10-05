@@ -1,0 +1,37 @@
+services:
+  postgresql:
+    image: 'postgres'
+    volumes:
+      - data:/data/db
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=crud_db
+  server:
+    build: ./server
+    ports:
+      - '8000:8000'
+    volumes:
+      - logs:/app/logs
+      - ./server:/app
+      - /app/node_modules
+    env_file:
+      - ./env/server.env
+    depends_on:
+      - postgresql
+  client:
+    build: ./client
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client/src:/app/src
+      - /app/node_modules
+    env_file:
+      - ./env/client.env
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+volumes:
+  data:
+  logs:
